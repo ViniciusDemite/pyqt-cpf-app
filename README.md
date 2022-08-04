@@ -6,6 +6,10 @@ O projeto consiste em um aplicativo que valida e gera CPF's de acordo com as reg
 
 Pode ser executado de duas maneiras: direto por um ambiente virtual de Python ou pelo Docker.
 
+Antes de qualquer uma da instalações é necessário executar os comandos:
+
+1.
+
 ## Docker
 
 **Essas instruções presumem que você já tenha o Docker instalado no seu Sistema Operacional.**
@@ -26,7 +30,8 @@ Para executar o ambiente virtual execute os seguintes comandos:
 1. Crie um ambiente virtual com: `python3 -m venv venv`
 2. Inicie o ambiente virtual com: `source venv/bin/activate`
 3. Instale as dependências: `pip install -y pyqt5 pyqt5-qt pyqt5-sip opencv-python`
-4. Execute o aplicativo com: `python3 main.py`
+4. Crie o arquivo .py do arquivo de design: `pyuic5 design.ui -o design.py`
+5. Execute o aplicativo com: `python3 main.py`
 
 ## Referências
 
