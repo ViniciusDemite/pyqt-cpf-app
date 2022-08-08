@@ -19,6 +19,7 @@ class CpfApp(QMainWindow, Ui_MainWindow):
     cpf = self._validate(cpf_without_digits)
 
     if cpf != self.cpf:
+      print(cpf, self.cpf)
       self.labelResponse.setText('CPF INVÁLIDO')
       self.labelResponse.setStyleSheet('color: red;')
       return
@@ -45,7 +46,7 @@ class CpfApp(QMainWindow, Ui_MainWindow):
 
       cpf += digit
 
-      return cpf
+    return cpf
 
   @staticmethod
   def _calculateDigit(value: int) -> int:
@@ -57,7 +58,7 @@ class CpfApp(QMainWindow, Ui_MainWindow):
   def _calculateTotal(incomplete_cpf: str) -> int:
     total = 0
 
-    for i, number in enumerate(reversed(incomplete_cpf), 2):
+    for i, number in enumerate(reversed(incomplete_cpf), start=2):
       total += int(number) * i
 
     return total
